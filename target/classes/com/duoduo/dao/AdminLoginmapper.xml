@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.duoduo.dao.AdminDao">
+    <select id="adminLogin" resultType="admin">
+        select * from admininfo where aname=#{AName} and apwd=#{APwd}
+    </select>
+</mapper>

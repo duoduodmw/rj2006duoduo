@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.duoduo.dao.GoodDao">
+    <select id="AllGood" resultType="map">
+        SELECT a.*,b.sName FROM goodinfo a,(SELECT sName,sID FROM shopinfo)b WHERE a.sid= b.sid
+    </select>
+    <select id="ShopGood" resultType="map">
+        select * from goodinfo where sid=#{sid}
+    </select>
+    <delete id="delGood">
+        delete  from goodinfo where gid=#{gid}
+    </delete>
+    <delete id="delGoodbysid">
+        delete from  goodinfo where sid=#{sid}
+    </delete>
+    <insert id="addGood">
+        insert into goodinfo values (null,#{gName},#{gPrice},#{gContent},#{sID})
+    </insert>
+    <update id="updateGood">
+        update goodinfo set gname=#{gName},gprice=#{gPrice},gcontent=#{gContent} where gid=#{gID}
+    </update>
+</mapper>

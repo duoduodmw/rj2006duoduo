@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <typeAliases>
+        <package name="com.duoduo.pojo"/>
+    </typeAliases>
+    <mappers>
+        <mapper resource="com/duoduo/dao/AdminLoginmapper.xml"/>
+        <mapper resource="com/duoduo/dao/UserMapper.xml"/>
+        <mapper resource="com/duoduo/dao/ShopMapper.xml"/>
+        <mapper resource="com/duoduo/dao/GoodMapper.xml"/>
+<!--        <mapper resource="com/duoduo/dao/WantMapper.xml"/>-->
+    </mappers>
+</configuration>

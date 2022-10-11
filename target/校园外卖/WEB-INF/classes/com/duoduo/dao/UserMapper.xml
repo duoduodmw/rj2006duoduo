@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.duoduo.dao.UserDao">
+    <select id="AllUser" resultType="user">
+        select * from userinfo
+    </select>
+    <select id="userLogin" resultType="user">
+        select  * from userinfo where uname=#{uName} and upwd=#{uPwd} and tid=2
+    </select>
+    <select id="userLogins" resultType="user">
+        select  * from userinfo where uname=#{uName} and upwd=#{uPwd}
+    </select>
+    <delete id="delUser">
+        delete from userinfo where uid=#{id}
+    </delete>
+    <insert id="addUser">
+        insert  into userinfo(uid,uname,upwd,uPhone) values (null,#{uName},#{uPwd},#{uPhone})
+    </insert>
+</mapper>

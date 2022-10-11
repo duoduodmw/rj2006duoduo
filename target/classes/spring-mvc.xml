@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <context:component-scan base-package="com.duoduo.controller"/>
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="defaultCharset" value="utf-8"/>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+<!--    <mvc:interceptors>-->
+<!--        &lt;!&ndash; 注意拦截器的执行顺序，会按照这里配置顺序执行 &ndash;&gt;-->
+<!--        <mvc:interceptor>-->
+<!--            <mvc:mapping path="/**" />&lt;!&ndash;匹配所有路径&ndash;&gt;-->
+<!--            <bean class="com.duoduo.interceptor.RquestInterceptor" />-->
+<!--        </mvc:interceptor>-->
+<!--        &lt;!&ndash; 其他拦截器 &ndash;&gt;-->
+<!--    </mvc:interceptors>-->
+
+</beans>

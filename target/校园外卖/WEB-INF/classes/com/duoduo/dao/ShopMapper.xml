@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.duoduo.dao.ShopDao">
+    <select id="AllShop" resultType="map">
+        SELECT a.*,b.uName from shopinfo a,userinfo b WHERE a.uID=b.uID
+    </select>
+    <select id="oneShop" resultType="shop">
+        select * from shopinfo where sid=#{sid}
+    </select>
+    <delete id="delShop">
+        delete from shopinfo where sid=#{sid}
+    </delete>
+    <select id="myShop" resultType="map">
+        SELECT * FROM shopinfo WHERE uID=#{uid}
+    </select>
+    <delete id="delShopbyuid">
+        delete from shopinfo where uid=#{uid}
+    </delete>
+    <update id="updateShop">
+        update shopinfo set sName=#{sName},sAddress=#{sAddress}, sPhone=#{sPhone} where sID=#{sID}
+    </update>
+    <insert id="addShop">
+        insert into shopinfo values (null,#{sName},#{sAddress},#{sPhone},#{uID})
+    </insert>
+</mapper>
